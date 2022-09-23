@@ -1,0 +1,6 @@
+CREATE procedure [UI].[SP_Get_QueuedFailed_Record]
+as
+SELECT TOP 1 * FROM DesignSyncProcessQueue WHERE (QueueStatus = 1) OR (QueueStatus = 4 AND IsRequeued = 1)
+
+
+exec [UI].[SP_Get_QueuedFailed_Record]
